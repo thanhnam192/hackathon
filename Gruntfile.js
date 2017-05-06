@@ -35,12 +35,12 @@ module.exports = function (grunt) {
         watch: {
 
             css: {
-                files: ['css/**/*.css'],
+                files: ['css/**/*.css']
 
             },
 
             js: {
-                files: ['Gruntfile.js', 'js/**/*.js'],
+                files: ['Gruntfile.js', 'js/**/*.js']
 
             },
 
