@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="app">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -16,8 +16,10 @@
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
         <link rel="stylesheet" href="css/app.css">
     </head>
-    <body >
-        Hello World!! 1
+    <body ng-cloak  ng-controller="controller">
+       <input ng-model="name">
+      Value: {{name}}
+      <button ng-click="changeModel()">Change model</button>
 
     </body>
 </html>
