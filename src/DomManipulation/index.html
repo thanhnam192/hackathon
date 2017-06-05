@@ -1,0 +1,45 @@
+<!doctype html>
+<html ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>AngularJS</title>
+        <!-- bower:js -->
+        <script src="/bower_components/jquery/dist/jquery.js"></script>
+        <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="/bower_components/angular/angular.js"></script>
+        <script src="/bower_components/angular-route/angular-route.js"></script>
+        <!-- endbower -->   
+        <script src="app.js"></script>
+        <!-- bower:css -->
+        <!-- endbower -->
+        <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="/css/app.css">
+    </head>
+    <body ng-controller="myController">
+        <div class="container" >
+            <h3>Visibility manipulation by using ng-if</h3>
+            <input type="checkbox" ng-model="isShow" />
+            <div ng-if="isShow">Change Visibility</div>
+            
+            <h3>Ability manipulation by using ng-disable</h3>
+            <input type="radio" ng-model="isMale" ng-value="true" />Male
+            <input type="radio" ng-model="isMale" ng-value="false" />Female
+            <button ng-disabled="isMale" ng-click="submit()" class="btn btn-primary">Submit</button>
+            
+            <h3>Class Manipulation by using ng-class</h3>
+            <div ng-class="myClass"><b>Axon Active</b></div>
+            <select ng-model="myClass">
+                <option ng-repeat="item in classes" ng-value="item.className">
+                    {{item.name}}
+                </option>
+            </select>
+            
+            <h3>Style manipulation by using  ng-style</h3>
+            <input ng-model="myColor" />
+            <div ng-style="{'color' : myColor}"><b>Picked Color</b></div>
+        </div>
+
+    </body>
+</html>
+
