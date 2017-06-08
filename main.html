@@ -1,0 +1,15 @@
+<div>
+    <h1> List Note </h1>
+    <p>Search <input ng-model="query"/></p>
+    <ul>
+        <li ng-repeat="item in list | filter : query" ng-style="{'background-color':item.color}" class="panel panel-default">
+            <div class="panel-body">
+                <p>Title : {{item.title}}</p>
+                <p>Description : {{item.des}}</p>
+                <a href="#/editNote/{{$index}}" class="btn btn-primary">Edit</a>
+            </div>
+        </li>
+    </ul>
+    
+    <a href="#/addNote" class="btn btn-primary">Add new note</a>
+</div>
