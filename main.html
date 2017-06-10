@@ -1,4 +1,4 @@
-<div>
+<div ng-controller="mainController">
     <h1> List Note </h1>
     <p>Search <input ng-model="query"/></p>
     <ul>
@@ -6,7 +6,7 @@
             <div class="panel-body">
                 <p>Title : {{item.title}}</p>
                 <p>Description : {{item.des}}</p>
-                <a href="#/editNote/{{$index}}" class="btn btn-primary">Edit</a>
+                <a href="#/editNote/" class="btn btn-primary" ng-click="editNote(item)">Edit</a>
             </div>
         </li>
     </ul>

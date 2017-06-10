@@ -1,4 +1,4 @@
-<div ng-style="{'background-color':selectedItem.color}">
+<div ng-style="{'background-color':selectedItem.color}" ng-controller="editNoteController">
     <div class="form-group">
         <label>Title</label>
         <input ng-model="selectedItem.title" class="form-control"/>
@@ -17,5 +17,5 @@
     </div>
    
     
-    <button ng-click="editNote()" class="btn btn-primary">Save</button>
+    <a ng-click="editNote()" class="btn btn-primary" href="#/">Save</a>
 </div>
