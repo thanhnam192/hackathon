@@ -1,7 +1,9 @@
 <div ng-style="{'background-color':color}" ng-controller="addNoteController">
-    <div class="form-group">
+    <form name='form'>
+         <div class="form-group">
         <label>Title</label>
-        <input ng-model="title" class="form-control"/>
+        <input ng-model="title" class="form-control" required name='title'/>
+        <div class="text-danger" ng-if="form.title.$invalid">Invalid title</div>
     </div>
     
     <div class="form-group">
@@ -14,8 +16,10 @@
         <select ng-model="color" class="form-control">
         <option ng-repeat="c in colors" ng-value="c">{{c}}</option>
         </select>
-    </div>
-   
+    </div>   
     
-    <button ng-click="addNote()" class="btn btn-primary">Add Note</button>
+    <a href="#/" ng-click="addNote()" class="btn btn-primary">Add Note</a>
+        
+    </form>
+   
 </div>

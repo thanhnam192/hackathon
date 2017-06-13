@@ -7,6 +7,7 @@
                 <p>Title : {{item.title}}</p>
                 <p>Description : {{item.des}}</p>
                 <a href="#/editNote/" class="btn btn-primary" ng-click="editNote(item)">Edit</a>
+                <a href="#/editNote/{{$index}}" class="btn btn-primary" >Edit With id</a>
             </div>
         </li>
     </ul>

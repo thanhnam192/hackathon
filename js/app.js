@@ -1,20 +1,21 @@
 var app = angular.module('myApp',['ngRoute']);
 app.config (function($routeProvider){
     $routeProvider.when('/',{
-        templateUrl : "main.html"
+        templateUrl : "views/main.html"
     }).when('/addNote',{
-        templateUrl : "addNote.html"
+        templateUrl : "views/addNote.html"
     }).when('/editNote',{
-        templateUrl : "editNote.html"
+        templateUrl : "views/editNote.html"
+    }).when('/editNote/:id',{
+        templateUrl : "views/editNote.html"
     });
+    ;
 });
 
 app.controller('mainController',function($scope,dataService){
    $scope.list = dataService.list;
     $scope.editNote = function(note){
         dataService.selectedNote = note;
-
-
     }
 });
 
@@ -30,18 +31,18 @@ app.controller('addNoteController',function($scope,$location, dataService){
                     color : $scope.color
                 });
         
-        $location.path('/');
+  
     }
 })
 
-app.controller('editNoteController',function($scope,dataService){
+app.controller('editNoteController',function($scope,dataService,$routeParams){
     $scope.colors = dataService.colors;
     $scope.selectedItem = dataService.selectedNote;
-    $scope.editNote = function(){
-        //Don't run anything because it auto map with item in list
-        //dataService.list[$scope.id] = $scope.selectedItem;
+    if($scope.selectedItem==null){
+        $scope.selectedItem = dataService.list[$routeParams.id]
+        
     }
- 
+
 })
 
 
